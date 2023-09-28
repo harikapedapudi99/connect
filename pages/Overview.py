@@ -19,7 +19,7 @@ import pandas as pd
 import Revocations
 import Export_Data
 from st_clickable_images import clickable_images
-import shutil
+import base64
 
 
 
@@ -216,7 +216,11 @@ if __name__ == '__main__':
     if 'SNOWPARK_SESSION' not in st.session_state:
         init_session()
     e1,e,e2=st.columns([5,2,93])
-    
+    images = []
+    for file in ["Overview-selected.png", "Reco-selected.png","Export-selected.png"]:
+        with open(file, "rb") as image:
+            encoded = base64.b64encode(image.read()).decode()
+            images.append(f"data:image/jpeg;base64,{encoded}")
     with e1:
         
         st.write("")
@@ -224,12 +228,7 @@ if __name__ == '__main__':
         st.write("")
         st.write("")
         clicked = clickable_images(
-        [
-            "Overview-selected.png",
-            "Reco-selected.png",
-            "Export-selected.png"
-                
-        ],
+        images,
         titles=["Overview","Summary","Revocations","Export_Data"],
         img_style={"margin": "15px", "height": "50px"},
         )
