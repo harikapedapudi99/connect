@@ -215,7 +215,7 @@ def build_UI():
 if __name__ == '__main__':
     if 'SNOWPARK_SESSION' not in st.session_state:
         init_session()
-    e1,e,e2=st.columns([6,1,93])
+    e1,e,e2=st.columns([7,1,92])
     images = []
     for file in ["Overview-selected.png", "Reco-selected.png","Export-selected.png"]:
         with open(file, "rb") as image:
