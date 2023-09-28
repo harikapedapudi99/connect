@@ -1,29 +1,11 @@
-from datetime import datetime, timedelta
-from snowflake.snowpark import Session
+from snowflake.snowpark.session import Session
 import snowflake.connector
-import plotly.graph_objects as go
 from app_data_model import SnowpatrolDataModel
 import json 
 import streamlit as st
-from streamlit_extras.colored_header import colored_header
-from streamlit_extras.metric_cards import style_metric_cards
-# from streamlit_toggle import st_toggle_switch
-from streamlit_option_menu import option_menu
-from PIL import Image
-import sqlalchemy as sa
-from sqlalchemy.orm import sessionmaker
-from sqlalchemy import create_engine
-#from sqlalchemy import URL
-import pandas as pd
-import json
-from snowflake.snowpark.session import Session
-import snowflake.snowpark.functions as F
-import snowflake.snowpark.types as T
 from dotenv import find_dotenv
 from pathlib import Path
 import sys
-import Revocations
-import Export_Data
 from streamlit_extras.switch_page_button import switch_page
 
 project_home = Path(find_dotenv()).parent
