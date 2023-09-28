@@ -216,9 +216,7 @@ if __name__ == '__main__':
     if 'SNOWPARK_SESSION' not in st.session_state:
         init_session()
     e1,e,e2=st.columns([5,2,93])
-    source_image_path = "Overview-selected.png"
-    destination_directory = "/home/adminuser/venv/lib/python3.9/site-packages/st_clickable_images/frontend/build/"
-    shutil.copy(source_image_path, destination_directory)
+    
     with e1:
         
         st.write("")
