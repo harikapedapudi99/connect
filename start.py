@@ -128,7 +128,7 @@ def init_session():
         st.markdown(
             """
             <div style="text-align: center; margin-top: 10px;">
-                <p style="font-size: 14px; color: #87CEEB;">Powered by Anblicks</p>
+                <p style="font-size: 14px; color: #000080;">Powered by Anblicks</p>
             </div>
             """,
             unsafe_allow_html=True,
