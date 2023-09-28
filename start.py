@@ -68,7 +68,7 @@ with open(project_home / 'config/creds.json', 'r') as creds_file:
     creds = json.load(creds_file)
 def init_session():
     #Create a layout with two columns for the top 70% and bottom 30% of the page
-    col1, col2 = st.columns([3, 1])
+    col1, col2 = st.columns([0.75, 0.25])
 
     # Add the image to the first column (top 70%)
     with col1:
