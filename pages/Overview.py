@@ -19,7 +19,6 @@ from sqlalchemy import create_engine
 import pandas as pd
 import Revocations
 import Export_Data
-import Summary
 from st_clickable_images import clickable_images
 
 
