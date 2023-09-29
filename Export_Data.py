@@ -271,7 +271,8 @@ def build_UI():
                 Data1.index = Data1.index + 1
                 Data1.index.name="Sr.No"
                 st.write("")
-                st.dataframe(Data1)
+                width=1000
+                st.dataframe(Data1, width=width)
                 csv = Data1.to_csv(index=False)
                 # Generate and set a download link
                 st.download_button(
