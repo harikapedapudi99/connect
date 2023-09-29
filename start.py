@@ -73,7 +73,7 @@ def init_session():
     # Add the image to the first column (top 70%)
     with col1:
         # Adjust the image width to fit correctly (you can adjust the width value)
-        st.image(image,  width=900, output_format="PNG"  ,channels="BGR") 
+        st.image(image,output_format="PNG"  ,channels="BGR") 
         st.markdown('<style>div.block-container{padding-bottom :0px; padding-right :0px; padding-top :0px;padding-left :50px; }</style>',unsafe_allow_html=True) # Set background color to transparent
         
         
