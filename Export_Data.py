@@ -17,7 +17,9 @@ from sqlalchemy.orm import sessionmaker
 from sqlalchemy import create_engine
 #from sqlalchemy import URL
 import pandas as pd
-
+from dotenv import find_dotenv
+from pathlib import Path
+import sys
 
 
 #################################
@@ -202,16 +204,12 @@ def build_UI():
 
         }
         
-        conn_params={
-        "user":"harika",
-        "password":"Harika@445",
-        "account":"kz58877.ca-central-1.aws",
-        "warehouse":"COMPUTE_WH",
-        "database":"SNOWPATROL",
-        "schema":"MAIN"
-        }
+        project_home = Path(find_dotenv()).parent
+        sys.path.append(str(project_home))
+        with open(project_home / 'config/creds.json', 'r') as ff:
+            conn_param=json.load(ff)
         
-        conn = snowflake.connector.connect(**conn_params)
+        conn = snowflake.connector.connect(**conn_param)
         cursor= conn.cursor()
         cursor1 = conn.cursor()
         cursor2 = conn.cursor()
