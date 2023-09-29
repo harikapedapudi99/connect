@@ -220,7 +220,7 @@ def build_UI():
         query1=f'''select distinct e.app_id,e.session_user,e.division,e.title,e.department,a.snapshot_datetime from snowpatrol.main.sample_employee_metadata e, snowpatrol.main.sample_okta_logs a where a.snapshot_datetime BETWEEN '{start_date}' and '{end_date}' and a.session_user=e.session_user and a.app_id=e.app_id and a.app_id='{app_id}'  '''
         # query2=f''' select distinct lr.app_id,lr.session_user,lr.title,lr.DEPARTMENT,lr.division,a.snapshot_datetime from sample_okta_logs a,SNOWPATROL.MAIN.LICENSE_REVOCATION_RECOMMENDATION lr where a.snapshot_datetime BETWEEN '{start_date}' and '{end_date}' and lr.app_id=a.app_id and a.session_user=lr.session_user AND a.app_id={app_id}'''
         #query2=f''' select distinct lr.app_id,lr.session_user,lr.title,lr.DEPARTMENT,lr.division,a.snapshot_datetime from sample_okta_logs a,SNOWPATROL.MAIN.LICENSE_REVOCATION_RECOMMENDATION lr where a.snapshot_datetime BETWEEN '{start_date}' and '{end_date}' and lr.app_id=a.app_id and a.session_user=lr.session_user'''
-        cursor.execute(query)
+        #cursor.execute(query)
         #metrics_section_col1, metrics_section_col2 = st.columns(2, gap="small")
         #with metrics_section_col1:
         
