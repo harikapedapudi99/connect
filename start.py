@@ -91,8 +91,8 @@ def init_session():
 
 
         # Add login credentials below the logo
-        account = st.text_input("Snowflake Account Identifier**",value="cgbqnol-oz22455")
-        username = st.text_input("Username*",value='harika')
+        account = st.text_input("Snowflake Account Identifier**")
+        username = st.text_input("Username*")
         password = st.text_input("Password*", type="password")
             # Create a custom HTML button with rounded edges and "Connect" text
         button_html = f"""
