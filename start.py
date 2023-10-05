@@ -12,6 +12,9 @@ project_home = Path(find_dotenv()).parent
 sys.path.append(str(project_home))
 
 
+st.set_page_config(layout="wide",initial_sidebar_state="collapsed")
+
+
 def build_snowpark_session(kwargs) -> Session:
     try:
         res=Session.builder.configs({
