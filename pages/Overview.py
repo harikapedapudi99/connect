@@ -111,6 +111,19 @@ def init_session() -> Session:
 
 
 def build_UI():
+    hide_streamlit_style = """
+    
+                <style>
+    
+                #MainMenu {visibility: hidden;}
+    
+                footer {visibility: hidden;}
+    
+                </style>
+    
+                """
+    
+    st.markdown(hide_streamlit_style, unsafe_allow_html=True)
     image = Image.open("SnowPatrol.png")
     with st.container() as mp:
         st.markdown('<style>div.block-container{padding-bottom :0px; padding-right :10px; padding-top :30px;padding-left :10px; margin:10px; }</style>',unsafe_allow_html=True)
