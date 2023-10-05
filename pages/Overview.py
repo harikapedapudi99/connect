@@ -229,7 +229,7 @@ if __name__ == '__main__':
         st.write("")
         clicked = clickable_images(
         images,
-        titles=["Overview","Summary","Revocations","Export_Data"],
+        titles=["Overview","Revocations","Export_Data"],
         img_style={"margin": "15px", "height": "50px"},
         )
         
