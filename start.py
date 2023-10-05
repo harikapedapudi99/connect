@@ -60,7 +60,7 @@ if 'page' not in st.session_state:
     st.session_state.page = 'login'
 
 # Set the page layout to be wide (call this only once, at the beginning)
-st.set_page_config(layout="wide",initial_sidebar_state="collapsed")
+# st.set_page_config(layout="wide",initial_sidebar_state="collapsed")
 
 # Define the image you want to display
 image = "Image.png"
