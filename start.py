@@ -10,19 +10,7 @@ from streamlit_extras.switch_page_button import switch_page
 
 project_home = Path(find_dotenv()).parent
 sys.path.append(str(project_home))
-hide_streamlit_style = """
-    
-            <style>
 
-            #MainMenu {visibility: hidden;}
-
-            footer {visibility: hidden;}
-
-            </style>
-
-            """
-
-st.markdown(hide_streamlit_style, unsafe_allow_html=True)
 
 def build_snowpark_session(kwargs) -> Session:
     try:
