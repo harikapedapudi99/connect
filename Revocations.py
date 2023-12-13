@@ -711,7 +711,7 @@ def build_UI():
                                                                             marker=dict(colors=['yellowgreen','silver']))
 
                                                 fig_savings_1.add_annotation(x=0.5, y=0.47,
-                                                                            text=f"{'$'}{hi}/{'App'}",
+                                                                            text=f"{'$'}{hi}/{app_name}",
                                                                             font=dict(size=15, family='Verdana',
                                                                                     color='black'),
                                                                             showarrow=False)
