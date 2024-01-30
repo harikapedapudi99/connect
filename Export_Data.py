@@ -176,6 +176,7 @@ def build_UI():
             end_date = st.date_input("To Date")
             
             app_list = active_licenses['APP_NAME'].unique()
+            
             app_name = st.selectbox(label=" # App Name", options=app_list)
                 
             app_id = int(active_licenses[active_licenses.APP_NAME == app_name].reset_index().at[0,'APP_ID'])
@@ -187,7 +188,7 @@ def build_UI():
             
             include = st.selectbox(
                 label="User",
-                options=["All User","Revocation Recommendations"],  # Replace with your department options
+                options=["Revocation Recommendations"],  # Replace with your department options
                 index=0  # Set the default selected department
             )
 
@@ -215,9 +216,9 @@ def build_UI():
         cursor2 = conn.cursor()
         cursor3= conn.cursor()
         # query="CREATE OR REPLACE TABLE SNOWPATROL.MAIN.draft_table AS SELECT  lr.*,sol.snapshot_datetime FROM SNOWPATROL.MAIN.LICENSE_REVOCATION_RECOMMENDATION lr JOIN SNOWPATROL.MAIN.sample_okta_logs sol ON lr.session_user = sol.session_user AND lr.app_id = sol.app_id"
-        #query1=f'''select e.app_id,e.session_user,e.division,e.title,e.department,a.snapshot_datetime from sample_emp_metadata e, sample_okta_logs a where a.snapshot_datetime BETWEEN '{start_date}' and '{end_date}' and a.session_user=e.session_user and a.app_id=e.app_id '''
-        query2=f'''select distinct e.app_id,e.session_user,e.division,e.title,e.department,a.snapshot_datetime from snowpatrol.main.sample_employee_metadata e, snowpatrol.main.sample_okta_logs a where a.snapshot_datetime not BETWEEN '{start_date}' and '{end_date}' and a.session_user=e.session_user and a.app_id=e.app_id and a.app_id='{app_id}' '''
-        query1=f'''select distinct e.app_id,e.session_user,e.division,e.title,e.department,a.snapshot_datetime from snowpatrol.main.sample_employee_metadata e, snowpatrol.main.sample_okta_logs a where a.snapshot_datetime BETWEEN '{start_date}' and '{end_date}' and a.session_user=e.session_user and a.app_id=e.app_id and a.app_id='{app_id}'  '''
+        #query1=f'''select e.session_user as User_email,e.division,e.title,e.department from sample_emp_metadata e, sample_okta_logs a where a.snapshot_datetime BETWEEN '{start_date}' and '{end_date}' and a.session_user=e.session_user and a.app_id=e.app_id '''
+        query2=f'''select distinct e.session_user as User_email,e.division,e.title,e.department from snowpatrol.main.sample_employee_metadata e, snowpatrol.main.sample_okta_logs a where a.snapshot_datetime not BETWEEN '{start_date}' and '{end_date}' and a.session_user=e.session_user and a.app_id=e.app_id and a.app_id='{app_id}' '''
+        query1=f'''select distinct e.session_user as User_email,e.division,e.title,e.department from snowpatrol.main.sample_employee_metadata e, snowpatrol.main.sample_okta_logs a where a.snapshot_datetime BETWEEN '{start_date}' and '{end_date}' and a.session_user=e.session_user and a.app_id=e.app_id and a.app_id='{app_id}'  '''
         # query2=f''' select distinct lr.app_id,lr.session_user,lr.title,lr.DEPARTMENT,lr.division,a.snapshot_datetime from sample_okta_logs a,SNOWPATROL.MAIN.LICENSE_REVOCATION_RECOMMENDATION lr where a.snapshot_datetime BETWEEN '{start_date}' and '{end_date}' and lr.app_id=a.app_id and a.session_user=lr.session_user AND a.app_id={app_id}'''
         #query2=f''' select distinct lr.app_id,lr.session_user,lr.title,lr.DEPARTMENT,lr.division,a.snapshot_datetime from sample_okta_logs a,SNOWPATROL.MAIN.LICENSE_REVOCATION_RECOMMENDATION lr where a.snapshot_datetime BETWEEN '{start_date}' and '{end_date}' and lr.app_id=a.app_id and a.session_user=lr.session_user'''
         #cursor.execute(query)
@@ -244,12 +245,16 @@ def build_UI():
                 #column_names[0] = "Sr.No"
                 # Create a DataFrame with column names
                 Data1 = pd.DataFrame(data1, columns=column_names)
+                
+
+                # Remove specified columns
+                
                 Data1.index = Data1.index + 1
                 Data1.index.name="Sr.No"
                 st.write("")
                 height = 300  # Set the desired number of rows to be visible
                 width = 1000   # Set the desired width of the DataFrame
-
+                
                 st.dataframe(Data1, width=width)
                 csv = Data1.to_csv(index=False)
                 # Generate and set a download link
@@ -266,10 +271,15 @@ def build_UI():
                 column_names = [desc[0] for desc in cursor2.description]
                 # Create a DataFrame with column names
                 Data1 = pd.DataFrame(data1, columns=column_names)
+                
+
+                # Remove specified columns
+                
                 Data1.index = Data1.index + 1
                 Data1.index.name="Sr.No"
                 st.write("")
                 width=1000
+                
                 st.dataframe(Data1, width=width)
                 csv = Data1.to_csv(index=False)
                 # Generate and set a download link
