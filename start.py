@@ -1,4 +1,4 @@
-from snowflake.snowpark.session import Session
+from snowflake.snowpark import Session
 import snowflake.connector
 from app_data_model import SnowpatrolDataModel
 import json 
