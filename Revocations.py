@@ -302,7 +302,7 @@ def build_UI():
                                                 # Create the first pie chart in the first column
                                             
                                                 fig_savings_1 = go.Figure(data=go.Pie(values=[hi,_revocable],
-                                                                                    labels=['Total Saved', 'Inactive Licences'], hole=0.4))
+                                                                                    labels=['Active Licences', 'Inactive Licences'], hole=0.4))
 
                                                 fig_savings_1.update_traces(hoverinfo='label+value',
                                                                             textinfo='percent', textfont_size=20,
@@ -315,7 +315,7 @@ def build_UI():
                                                                             showarrow=False)
 
                                                 fig_savings_1.update_layout(title={
-                                                    'text': f"{app_name} Potential Savings",
+                                                    'text': f"Active vs. Inactive Licenses for {app_name}",
                                                     'font': {'size' : 20, 'color': 'red'},
                                                     'y': 0.9,
                                                     'x': 0.45,
@@ -704,7 +704,7 @@ def build_UI():
                                                 # Create the first pie chart in the first column
                                             
                                                 fig_savings_1 = go.Figure(data=go.Pie(values=[hi, _revocable],
-                                                                                    labels=['Total Saved', 'Inactive Licences'], hole=0.4))
+                                                                                    labels=['Active Licences', 'Inactive Licences'], hole=0.4))
 
                                                 fig_savings_1.update_traces(hoverinfo='label+value',
                                                                             textinfo='percent', textfont_size=20,
@@ -717,7 +717,7 @@ def build_UI():
                                                                             showarrow=False)
 
                                                 fig_savings_1.update_layout(title={
-                                                    'text': f"{app_name} Potential Savings",
+                                                    'text': f"Active vs. Inactive Licenses for {app_name}",
                                                     'font': {'size' : 20, 'color': 'red'},
                                                     'y': 0.9,
                                                     'x': 0.45,
@@ -750,7 +750,7 @@ def build_UI():
                                                 # Create the first pie chart in the first column
                                             
                                                 fig_savings_1 = go.Figure(data=go.Pie(values=[hi,_revocable],
-                                                                                    labels=['Total Saved', 'Inactive Licences'], hole=0.4))
+                                                                                    labels=['Active Licences', 'Inactive Licences'], hole=0.4))
 
                                                 fig_savings_1.update_traces(hoverinfo='label+value',
                                                                             textinfo='percent', textfont_size=20,
@@ -763,7 +763,7 @@ def build_UI():
                                                                             showarrow=False)
 
                                                 fig_savings_1.update_layout(title={
-                                                    'text': f"{app_name} Potential Savings",
+                                                    'text': f"Active vs. Inactive Licenses for {app_name}",
                                                     'font': {'size' : 20, 'color': 'red'},
                                                     'y': 0.9,
                                                     'x': 0.45,
@@ -794,7 +794,7 @@ def build_UI():
                                                 # Create the first pie chart in the first column
                                             
                                                 fig_savings_1 = go.Figure(data=go.Pie(values=[hi,_revocable],
-                                                                                    labels=['Total Saved', 'Inactive Licences'], hole=0.4))
+                                                                                    labels=['Active Licences', 'Inactive Licences'], hole=0.4))
 
                                                 fig_savings_1.update_traces(hoverinfo='label+value',
                                                                             textinfo='percent', textfont_size=20,
@@ -807,7 +807,7 @@ def build_UI():
                                                                             showarrow=False)
 
                                                 fig_savings_1.update_layout(title={
-                                                    'text': f"{app_name} Potential Savings",
+                                                    'text': f"Active vs. Inactive Licenses for {app_name}",
                                                     'font': {'size' : 20, 'color': 'red'},
                                                     'y': 0.9,
                                                     'x': 0.45,
@@ -838,7 +838,7 @@ def build_UI():
                                                 # Create the first pie chart in the first column
                                             
                                                 fig_savings_1 = go.Figure(data=go.Pie(values=[hi,_revocable],
-                                                                                    labels=['Total Saved', 'Inactive Licences'], hole=0.4))
+                                                                                    labels=['Active Licences', 'Inactive Licences'], hole=0.4))
 
                                                 fig_savings_1.update_traces(hoverinfo='label+value',
                                                                             textinfo='percent', textfont_size=20,
@@ -851,7 +851,7 @@ def build_UI():
                                                                             showarrow=False)
 
                                                 fig_savings_1.update_layout(title={
-                                                    'text': f"{app_name} Potential Savings",
+                                                    'text': f"Active vs. Inactive Licenses for {app_name}",
                                                     'font': {'size' : 20, 'color': 'red'},
                                                     'y': 0.9,
                                                     'x': 0.45,
